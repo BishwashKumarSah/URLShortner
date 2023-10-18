@@ -1,0 +1,81 @@
+{
+  "name": "small-id",
+  "version": "1.0.0",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "benchmark": {
+      "version": "2.1.4",
+      "resolved": "https://registry.npmjs.org/benchmark/-/benchmark-2.1.4.tgz",
+      "integrity": "sha1-CfPeMckWQl1JjMLuVloOvzwqVik=",
+      "dev": true,
+      "requires": {
+        "lodash": "4.17.4",
+        "platform": "1.3.4"
+      },
+      "dependencies": {
+        "lodash": {
+          "version": "4.17.4",
+          "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz",
+          "integrity": "sha1-eCA6TRwyiuHYbcpkYONptX9AVa4=",
+          "dev": true
+        }
+      }
+    },
+    "commander": {
+      "version": "2.11.0",
+      "resolved": "https://registry.npmjs.org/commander/-/commander-2.11.0.tgz",
+      "integrity": "sha512-b0553uYA5YAEGgyYIGYROzKQ7X5RAqedkfjiZxwi0kL1g3bOaBNNZfYkzt/CL0umgD5wc9Jec2FbB98CjkMRvQ==",
+      "dev": true
+    },
+    "crypto-random-string": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-1.0.0.tgz",
+      "integrity": "sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=",
+      "dev": true
+    },
+    "idgen": {
+      "version": "2.0.2",
+      "resolved": "https://registry.npmjs.org/idgen/-/idgen-2.0.2.tgz",
+      "integrity": "sha1-ZFpO6n7bUz2UH1jt2UMVVUWPwqg=",
+      "dev": true,
+      "requires": {
+        "commander": "2.11.0"
+      }
+    },
+    "lodash": {
+      "version": "3.10.1",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz",
+      "integrity": "sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y="
+    },
+    "platform": {
+      "version": "1.3.4",
+      "resolved": "https://registry.npmjs.org/platform/-/platform-1.3.4.tgz",
+      "integrity": "sha1-bw+xftqqSPIUQrOpdcBjEw8cPr0=",
+      "dev": true
+    },
+    "tinyid": {
+      "version": "0.1.4",
+      "resolved": "https://registry.npmjs.org/tinyid/-/tinyid-0.1.4.tgz",
+      "integrity": "sha1-JOOpV4E7EvGsBUq8oSbb0kVQRd4=",
+      "requires": {
+        "lodash": "3.10.1"
+      }
+    },
+    "unique-id": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/unique-id/-/unique-id-1.0.2.tgz",
+      "integrity": "sha1-Uv8gv16OjeeqL5hib1EGdZeGNNI=",
+      "dev": true
+    },
+    "unique-string": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/unique-string/-/unique-string-1.0.0.tgz",
+      "integrity": "sha1-nhBXzKhRq7kzmPizOuGHuZyuwRo=",
+      "dev": true,
+      "requires": {
+        "crypto-random-string": "1.0.0"
+      }
+    }
+  }
+}

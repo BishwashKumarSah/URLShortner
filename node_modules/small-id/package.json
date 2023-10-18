@@ -1,0 +1,33 @@
+{
+  "name": "small-id",
+  "version": "1.0.0",
+  "description": "Lightweight collision free small ids",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Stefan-Gabriel Muscalu <stefan@findie.me>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "idgen": "^2.0.2",
+    "unique-id": "^1.0.2",
+    "unique-string": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "keywords": [
+    "small-id",
+    "unique-id",
+    "small id",
+    "unique",
+    "id",
+    "collision"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:findie/small-id.git"
+  },
+  "dependencies": {
+    "tinyid": "^0.1.4"
+  }
+}
