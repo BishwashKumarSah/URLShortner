@@ -1,17 +1,18 @@
 const smallId = require("small-id");
-const id = smallId();
 
 const URL = require("../Model/url");
 
 async function handleCreateShortUrl(req, res) {
   const redirectURL = req.body.redirectURL;
+  var id = smallId();
+
   if (!redirectURL) return res.status(400).json({ msg: "URL is required!" });
   await URL.create({
     shortId: id,
     redirectURL: redirectURL,
     countHistory: [],
   });
-  return res.json({ id: id });
+  return res.render("home", { shortId: id });
 }
 
 const handleGetUrlById = async (req, res) => {

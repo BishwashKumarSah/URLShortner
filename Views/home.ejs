@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      body {
+        height: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2rem;
+      }
+      .container {
+        text-align: center;
+      }
+      /* .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 9em;
+        width: 30em;
+        text-align: center;
+      } */
+      .content {
+        width: 70%;
+        height: 70%;
+        margin: 0 auto;
+      }
+      .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+      }
+      form {
+        width: 100%;
+        /* background-color: red; */
+      }
+
+      form input {
+        border: 1px solid black;
+        width: 80%;
+        display: block;
+        padding: 20px 50px;
+        margin: 20px auto;
+        font-size: 1.3rem;
+      }
+      .submit-btn {
+        padding: 20px 30px;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      input::placeholder {
+        font: 1.25rem/3 sans-serif;
+      }
+      .table {
+        /* background-color: red; */
+        display: grid;
+        place-content: center;
+        width: 70%;
+        margin: 20px auto;
+      }
+      th,
+      td {
+        padding: 15px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="content">
+        <% if (locals.shortId) { %> Generated Url is
+        http://localhost:8000/url/<%= shortId %> <% } %>
+        <h1>Enter the Original Url:</h1>
+        <div class="form">
+          <form id="a-form" action="/url" method="post">
+            <input
+              type="text"
+              name="redirectURL"
+              placeholder="https://www.example.com"
+            />
+          </form>
+          <button class="submit-btn" type="submit" form="a-form">
+            Generate
+          </button>
+        </div>
+      </section>
+
+      <section class="table">
+        <% if (locals.urls) { %>
+        <table>
+          <thead>
+            <th>SNo</th>
+            <th>ID</th>
+            <th>RedirectURL</th>
+            <th>No. of Clicks</th>
+          </thead>
+          <tbody>
+            <% urls.forEach((url,index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= url.shortId %></td>
+              <td><%= url.redirectURL %></td>
+              <td><%= url.countHistory.length%></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </section>
+      <% } %>
+    </section>
+  </body>
+</html>
