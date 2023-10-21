@@ -3,6 +3,8 @@ const path = require("path");
 
 const { connectDB } = require("./connection");
 // const URL = require("./Model/url");
+
+const userRouter = require("./Routes/userRouter");
 const urlRouter = require("./Routes/url");
 const staticRouter = require("./Routes/staticRouter");
 
@@ -22,6 +24,7 @@ app.use(express.json());
 
 //Routes
 app.use("/url", urlRouter);
+app.use("/user", userRouter);
 //View Routes
 app.use("/", staticRouter);
 
