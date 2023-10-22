@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 
 const { connectDB } = require("./connection");
 // const URL = require("./Model/url");
@@ -7,6 +8,7 @@ const { connectDB } = require("./connection");
 const userRouter = require("./Routes/userRouter");
 const urlRouter = require("./Routes/url");
 const staticRouter = require("./Routes/staticRouter");
+const { restrictToLoggedInUserOnly,checkAuth } = require("./Middleware/auth");
 
 const PORT = 8000;
 const app = express();
@@ -21,11 +23,12 @@ app.set("views", path.resolve("./Views"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cookieParser());
 
 //Routes
-app.use("/url", urlRouter);
+app.use("/url", restrictToLoggedInUserOnly, urlRouter);
 app.use("/user", userRouter);
 //View Routes
-app.use("/", staticRouter);
+app.use("/", checkAuth, staticRouter);
 
 app.listen(PORT, () => console.log(`Server Started at PORT ${PORT}`));
